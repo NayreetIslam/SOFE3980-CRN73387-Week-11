@@ -24,12 +24,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 	//constructors 
 	public TrafficLightPanel() {
 		light=new TrafficLight();
-		//JButton changeButton = new JButton("Change Light");
-		//changeButton.addActionListener(new ChangeListener());
-		//add(changeButton);
 		signalName="Stop";
-		//JLabel lable1= new JLabel(signalName);
-		//add(lable1);
 		lane1Time=10000;
 		lane2Time=10000;
 		setBackground(Color.WHITE);
@@ -37,7 +32,6 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		signalName= new String();
 		smart=new SmartTrafficInterval();
         signalFlag=1;
-        //f= new Font("Arial",Font.BOLD,50);
         traffic= new Thread(this);
         traffic.start();
 		
@@ -82,8 +76,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 	
 	
 	public void run() {
-       
-		//System.out.println("Thread started");
+
 		lane1Time=(int) (lane1Time+lane1Time*smart.getSmartSignalTime());
 		if(lane1Time>15000) lane1Time=15000;
 		lane2Time=20000-lane1Time;
@@ -99,7 +92,6 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 				if(light.indexOfLitBulb()==0) {
 					Thread.sleep(lane2Time);
 					signalName="GO";
-					//System.out.println(lane2Time);
 				}
 				else if(light.indexOfLitBulb()==1) {
 					Thread.sleep(1000);
@@ -108,7 +100,6 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 				else if(light.indexOfLitBulb()==2) {
 					Thread.sleep(lane1Time);
 					signalName="SLOW";
-					//System.out.println(lane1Time);
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -117,12 +108,4 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 			repaint();	
 		}
     }
-	
-	private class ChangeListener implements ActionListener{
-		public void actionPerformed(ActionEvent arg0) {
-			light.nextState();
-			repaint();
-		}
-		
-	}
-}//end of class
+}
