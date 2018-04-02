@@ -1,12 +1,8 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 
 public class SmartTrafficInterval {
 	
@@ -45,6 +41,7 @@ public class SmartTrafficInterval {
             		}
             	}	
             }
+            b.close();
             
             System.out.println(average/count+" "+(sumOfLane1+sumOfLane2)/count+" "+vehicleNumber/totalNumberOfSignals);
             currentTrafficAverage=(sumOfLane1+sumOfLane2)/count;
@@ -69,8 +66,8 @@ public class SmartTrafficInterval {
 	
 	public String getCurrentDay() {
 		int day;
-		Date today = Calendar.getInstance().getTime();
-		day=today.getDay();
+		Calendar today = Calendar.getInstance();
+		day=today.get(Calendar.DAY_OF_WEEK);
 		String Name="";
 		if (day==0) Name="Sunday";
 		else if (day==1) Name="Monday";
@@ -84,8 +81,8 @@ public class SmartTrafficInterval {
 	
 	public int getCurrentTimeInterval() {
 		int currentHour,interval=0;
-		Date today = Calendar.getInstance().getTime();
-		currentHour=today.getHours();
+		Calendar today = Calendar.getInstance();
+		currentHour=today.get(Calendar.HOUR);
 		if (currentHour>=0 && currentHour<=2) interval=1;
 		else if (currentHour>= 3 && currentHour<=5) interval=2;
 		else if (currentHour>= 6 && currentHour<=8) interval=3;
