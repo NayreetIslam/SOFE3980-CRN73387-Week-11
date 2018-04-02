@@ -17,9 +17,5 @@ public class Runner {
 		frame.pack();
 		frame.setVisible(true);
 		//smart.readDataFromFile();
-		
-		
-
 	}
-
 }

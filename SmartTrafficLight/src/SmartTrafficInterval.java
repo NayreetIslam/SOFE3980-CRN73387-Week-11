@@ -83,26 +83,25 @@ public class SmartTrafficInterval {
 	}
 	
 	public int getCurrentTimeInterval() {
-		int currentHour,interval=0;
+		int currentHour;
 		Date today = Calendar.getInstance().getTime();
 		currentHour=today.getHours();
-		if (currentHour>=0 && currentHour<=2) interval=1;
-		else if (currentHour>= 3 && currentHour<=5) interval=2;
-		else if (currentHour>= 6 && currentHour<=8) interval=3;
-		else if (currentHour>= 9 && currentHour<=11) interval=4;
-		else if (currentHour>= 12 && currentHour<=14) interval=5;
-		else if (currentHour>= 15 && currentHour<=17) interval=6;
-		else if (currentHour>= 18 && currentHour<=20) interval=7;
-		else if (currentHour>= 21 && currentHour<=23) interval=8;
-		//System.out.println(currentHour);
-		return interval;
+		
+		return  getInterval(currentHour);
 	}
 	
 	
 	public int getCurrentTimeInterval(String Hour) {
-		int currentHour,interval=0;
-		String Time = Hour.substring(0, 2);  
-		currentHour=Integer.parseInt(Time);
+		int currentHour;
+		String Time = Hour.substring(0, 2);
+		currentHour = Integer.parseInt(Time);
+		
+		return getInterval(currentHour);
+	}
+	
+	//This function was created for refactoring purposes
+	public int getInterval(int currentHour) {
+		int interval = 0;
 		if (currentHour>=0 && currentHour<=2) interval=1;
 		else if (currentHour>= 3 && currentHour<=5) interval=2;
 		else if (currentHour>= 6 && currentHour<=8) interval=3;

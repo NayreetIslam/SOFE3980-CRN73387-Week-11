@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("serial")
 public class TrafficLightPanel extends JPanel implements Runnable{
 
 	//instance fields
@@ -24,12 +25,12 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 	//constructors 
 	public TrafficLightPanel() {
 		light=new TrafficLight();
-		//JButton changeButton = new JButton("Change Light");
-		//changeButton.addActionListener(new ChangeListener());
-		//add(changeButton);
+		JButton changeButton = new JButton("Change Light");
+		changeButton.addActionListener(new ChangeListener());
+		add(changeButton);
 		signalName="Stop";
-		//JLabel lable1= new JLabel(signalName);
-		//add(lable1);
+		JLabel lable1= new JLabel(signalName);
+		add(lable1);
 		lane1Time=10000;
 		lane2Time=10000;
 		setBackground(Color.WHITE);
@@ -37,7 +38,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		signalName= new String();
 		smart=new SmartTrafficInterval();
         signalFlag=1;
-        //f= new Font("Arial",Font.BOLD,50);
+        //f = new Font("Arial",Font.BOLD,50);
         traffic= new Thread(this);
         traffic.start();
 		

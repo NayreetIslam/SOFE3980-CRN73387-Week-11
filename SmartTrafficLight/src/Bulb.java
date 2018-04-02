@@ -8,14 +8,13 @@ public class Bulb {
 	
 	//constructor
 	public Bulb(boolean on) {
-		this.on=on;
+		this.on = on;
 	}
 	public Bulb(boolean on,Color c, String cn) {
-		this.on=on;
-		color=c;
-		colorName=cn;
+		this.on = on;
+		color = c;
+		colorName = cn;
 	}
-	
 	
 	public boolean isOn(){
 		return on;
@@ -37,8 +36,7 @@ public class Bulb {
 	public void setColorName(String cn) {
 		colorName=cn;
 	}
-	
-	
+		
 	public void turnOn() {
 		on=true;
 	}
@@ -48,11 +46,14 @@ public class Bulb {
 	}
 	
 	public String toString() {
+		
 		String result;
 		if(on) {
+			
 			result="The "+getColorName()+" light is on.";
 		}
 		else {
+			
 			result="The "+getColorName()+" light is off.";
 		}
 		return result;
