@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76d5176a_8ba67246",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013841
+      },
+      "writtenOn": "2018-04-02T14:25:13Z",
+      "side": 1,
+      "message": "Very good refactoring. New method makes the class more compact and easy to read.",
+      "revId": "c5c3622cd89206b52bf0161236d52766101468c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
