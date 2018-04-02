@@ -8,9 +8,9 @@ public class TrafficLight {
 	//constructors
 	public TrafficLight() {
 		lights = new Bulb[3];
-		lights[0]= new Bulb(true, Color.RED,"red");
-		lights[1]= new Bulb(false, Color.YELLOW,"yellow");
-		lights[2]= new Bulb(false, Color.GREEN,"green");
+		lights[0]= new Bulb(true, Color.RED);
+		lights[1]= new Bulb(false, Color.YELLOW);
+		lights[2]= new Bulb(false, Color.GREEN);
 	}
 	
 	//asscessors and mutators
@@ -54,8 +54,8 @@ public class TrafficLight {
 	public String toString() {
 		String result="";
 		for(int i=0;i<lights.length;i++) {
-			result+="Bulb "+(i+1)+" is "+lights[i].getColorName()+" and "
-					+ lights[i].toString().toLowerCase()+"\n";
+			result+="Bulb "+(i+1)+" is "+lights[i].getColor()+" and "
+					+ lights[i].isOn()+"\n";
 		}
 		return result;
 	}
