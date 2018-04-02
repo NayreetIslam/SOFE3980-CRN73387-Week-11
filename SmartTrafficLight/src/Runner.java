@@ -1,6 +1,6 @@
-import java.awt.Color;
+/*import java.awt.Color;
 import java.awt.Dimension;
-import java.io.IOException;
+import java.io.IOException;*/
 
 import javax.swing.*;
 

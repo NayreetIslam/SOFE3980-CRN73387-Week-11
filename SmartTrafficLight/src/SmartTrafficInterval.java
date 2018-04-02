@@ -1,8 +1,8 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
+/*import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileOutputStream;*/
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
@@ -59,10 +59,13 @@ public class SmartTrafficInterval {
     		else {
     			predictrafficCondition=3;
     		}
-            
-        } catch (IOException e) {
+            b.close(); // CLosed the buffered reader
+        }
+		
+		catch (IOException e) {
             e.printStackTrace();
         }
+		
 		
 		return average/count;
 	}
