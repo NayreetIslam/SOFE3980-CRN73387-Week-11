@@ -1,7 +1,3 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.io.IOException;
-
 import javax.swing.*;
 
 public class Runner {
@@ -16,10 +12,6 @@ public class Runner {
 		frame.getContentPane().add(panel);
 		frame.pack();
 		frame.setVisible(true);
-		//smart.readDataFromFile();
-		
-		
-
 	}
 
 }

@@ -1,8 +1,5 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
@@ -24,9 +21,9 @@ public class SmartTrafficInterval {
 		float vehicleNumber=0;
 		try {
             File f = new File("input.txt");
-            BufferedReader b = new BufferedReader(new FileReader(f));
+            BufferedReader buff = new BufferedReader(new FileReader(f));
             String readLine = "";
-            while ((readLine = b.readLine()) != null) {
+            while ((readLine = buff.readLine()) != null) {
             	String[] currencies = readLine.split("\\s+");   
             	
             	if(totalNumberOfSignals!=0) {
@@ -46,9 +43,11 @@ public class SmartTrafficInterval {
             	}	
             }
             
-            System.out.println(average/count+" "+(sumOfLane1+sumOfLane2)/count+" "+vehicleNumber/totalNumberOfSignals);
+            buff.close();
+            
             currentTrafficAverage=(sumOfLane1+sumOfLane2)/count;
             totalTrafficAverage=vehicleNumber/totalNumberOfSignals;
+            System.out.println(average/count+" "+currentTrafficAverage +" "+ totalTrafficAverage);
             
             if(Math.abs(currentTrafficAverage-totalTrafficAverage)<=4) {
             	predictrafficCondition=1;
@@ -67,6 +66,7 @@ public class SmartTrafficInterval {
 		return average/count;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public String getCurrentDay() {
 		int day;
 		Date today = Calendar.getInstance().getTime();
@@ -82,6 +82,7 @@ public class SmartTrafficInterval {
 		return Name;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public int getCurrentTimeInterval() {
 		int currentHour,interval=0;
 		Date today = Calendar.getInstance().getTime();
@@ -94,7 +95,6 @@ public class SmartTrafficInterval {
 		else if (currentHour>= 15 && currentHour<=17) interval=6;
 		else if (currentHour>= 18 && currentHour<=20) interval=7;
 		else if (currentHour>= 21 && currentHour<=23) interval=8;
-		//System.out.println(currentHour);
 		return interval;
 	}
 	
@@ -111,7 +111,6 @@ public class SmartTrafficInterval {
 		else if (currentHour>= 15 && currentHour<=17) interval=6;
 		else if (currentHour>= 18 && currentHour<=20) interval=7;
 		else if (currentHour>= 21 && currentHour<=23) interval=8;
-		//System.out.println(currentHour);
 		return interval;
 	}
 	
