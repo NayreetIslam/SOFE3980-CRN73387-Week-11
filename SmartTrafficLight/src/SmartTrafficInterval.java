@@ -43,7 +43,8 @@ public class SmartTrafficInterval {
             				average+=((lane1/lane2)-1);
             				System.out.println(average+" "+sumOfLane1+" "+sumOfLane2);
             		}
-            	}	
+            	}
+            	b.close();
             }
             
             System.out.println(average/count+" "+(sumOfLane1+sumOfLane2)/count+" "+vehicleNumber/totalNumberOfSignals);
@@ -64,28 +65,42 @@ public class SmartTrafficInterval {
             e.printStackTrace();
         }
 		
+		
+		
 		return average/count;
 	}
 	
 	public String getCurrentDay() {
 		int day;
-		Date today = Calendar.getInstance().getTime();
-		day=today.getDay();
+		Calendar today = Calendar.getInstance();
+		day=today.get(Calendar.DAY_OF_WEEK);
 		String Name="";
-		if (day==0) Name="Sunday";
-		else if (day==1) Name="Monday";
-		else if (day==2) Name="Tuesday";
-		else if (day==3) Name="Wednesday";
-		else if (day==4) Name="Thursday";
-		else if (day==5) Name="Friday";
-		else if (day==6) Name="Saturday";
+		switch(day){
+		case 0: Name="Sunday";
+				break;
+		case 1:	Name="Monday";
+				break;
+		case 2: Name = "Tuesday";
+				break;
+		case 3: Name = "Wednesday";
+				break;
+		case 4: Name = "Thursday";
+				break;
+		case 5: Name = "Friday";
+				break;
+		case 6: Name = "Saturday";
+				break;
+		default: Name = "invalid day";
+				break;
+		}
 		return Name;
-	}
+}
+
 	
 	public int getCurrentTimeInterval() {
 		int currentHour,interval=0;
-		Date today = Calendar.getInstance().getTime();
-		currentHour=today.getHours();
+		Calendar today = Calendar.getInstance();
+		currentHour=today.get(Calendar.HOUR_OF_DAY);
 		if (currentHour>=0 && currentHour<=2) interval=1;
 		else if (currentHour>= 3 && currentHour<=5) interval=2;
 		else if (currentHour>= 6 && currentHour<=8) interval=3;
@@ -122,5 +137,5 @@ public class SmartTrafficInterval {
 	}
 	
 	
-
+	
 }

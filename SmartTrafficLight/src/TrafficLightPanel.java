@@ -1,10 +1,5 @@
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TrafficLightPanel extends JPanel implements Runnable{
 
@@ -15,14 +10,16 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 	private final int X_OFFSET=10,Y_OFFSET=10;
 	Thread traffic;
     int signalFlag;
-    String signalName="";
+    String signalName;
     SmartTrafficInterval smart;
     int lane1Time;
     int lane2Time;
-    String trafficCondition="";
+    String trafficCondition;
     
 	//constructors 
 	public TrafficLightPanel() {
+		signalName = "";
+		trafficCondition = "";
 		light=new TrafficLight();
 		//JButton changeButton = new JButton("Change Light");
 		//changeButton.addActionListener(new ChangeListener());
@@ -118,11 +115,11 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		}
     }
 	
-	private class ChangeListener implements ActionListener{
+	/*private class ChangeListener implements ActionListener{
 		public void actionPerformed(ActionEvent arg0) {
 			light.nextState();
 			repaint();
 		}
 		
-	}
+	}*/
 }//end of class

@@ -10,10 +10,10 @@ public class Bulb {
 	public Bulb(boolean on) {
 		this.on=on;
 	}
-	public Bulb(boolean on,Color c, String cn) {
+	public Bulb(boolean on,Color c, String name) {
 		this.on=on;
-		color=c;
-		colorName=cn;
+		this.color=c;
+		this.colorName=name;
 	}
 	
 	
@@ -28,23 +28,23 @@ public class Bulb {
 		return color;
 	}
 	public void setColor(Color c) {
-		color=c;
+		this.color=c;
 	}
 	
 	public String getColorName() {
 		return colorName;
 	}
 	public void setColorName(String cn) {
-		colorName=cn;
+		this.colorName=cn;
 	}
 	
 	
 	public void turnOn() {
-		on=true;
+		this.on=true;
 	}
 	
 	public void turnOff() {
-		on=false;
+		this.on=false;
 	}
 	
 	public String toString() {
