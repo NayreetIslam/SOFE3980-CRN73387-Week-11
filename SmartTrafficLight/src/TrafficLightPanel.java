@@ -1,13 +1,12 @@
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TrafficLightPanel extends JPanel implements Runnable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//instance fields
 	private TrafficLight light;
 	private final int X=60, Y=50, WIDTH=50, HEIGHT=130;
@@ -84,15 +83,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 	public void run() {
        
 		//System.out.println("Thread started");
-		lane1Time=(int) (lane1Time+lane1Time*smart.getSmartSignalTime());
-		if(lane1Time>15000) lane1Time=15000;
-		lane2Time=20000-lane1Time;
-		if(lane2Time<5000) lane2Time=5000;
-		
-		if(smart.getTrafficCondition()==1) {trafficCondition="Medium";}
-		else if(smart.getTrafficCondition()==2) {trafficCondition="Light";}
-		else {trafficCondition="Heavy";}
-		
+		initTrafficSettings();
 		
 		for(;;) {
 			try {
@@ -117,12 +108,17 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 			repaint();	
 		}
     }
-	
-	private class ChangeListener implements ActionListener{
-		public void actionPerformed(ActionEvent arg0) {
-			light.nextState();
-			repaint();
-		}
+
+	private void initTrafficSettings() 
+	{
+		lane1Time = (int) (lane1Time+lane1Time*smart.getSmartSignalTime());
+		if(lane1Time>15000) lane1Time=15000;
+		lane2Time=20000-lane1Time;
+		if(lane2Time<5000) lane2Time=5000;
 		
+		if(smart.getTrafficCondition()==1) {trafficCondition="Medium";}
+		else if(smart.getTrafficCondition()==2) {trafficCondition="Light";}
+		else {trafficCondition="Heavy";}
 	}
+	
 }//end of class

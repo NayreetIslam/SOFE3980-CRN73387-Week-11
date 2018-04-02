@@ -1,12 +1,8 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 
 public class SmartTrafficInterval {
 	
@@ -48,30 +44,45 @@ public class SmartTrafficInterval {
             
             System.out.println(average/count+" "+(sumOfLane1+sumOfLane2)/count+" "+vehicleNumber/totalNumberOfSignals);
             currentTrafficAverage=(sumOfLane1+sumOfLane2)/count;
-            totalTrafficAverage=vehicleNumber/totalNumberOfSignals;
+            totalTrafficAverage=vehicleNumber/totalNumberOfSignals; 
+            calcPrediction(currentTrafficAverage, totalTrafficAverage);
             
-            if(Math.abs(currentTrafficAverage-totalTrafficAverage)<=4) {
-            	predictrafficCondition=1;
-    		}
-    		else if(totalTrafficAverage>=currentTrafficAverage) {
-    			predictrafficCondition=2;
-    		}
-    		else {
-    			predictrafficCondition=3;
-    		}
+            b.close();
             
         } catch (IOException e) {
             e.printStackTrace();
         }
 		
-		return average/count;
+		return average / (float) count;
+	}
+
+	private void calcPrediction(float currentTrafficAverage, float totalTrafficAverage) 
+	{
+		if(Math.abs(currentTrafficAverage-totalTrafficAverage)<=4) 
+		{
+			this.predictrafficCondition=1;
+		}
+		else if(totalTrafficAverage>=currentTrafficAverage) 
+		{
+			this.predictrafficCondition=2;
+		}
+		else 
+		{
+			this.predictrafficCondition=3;
+		}
 	}
 	
 	public String getCurrentDay() {
-		int day;
-		Date today = Calendar.getInstance().getTime();
-		day=today.getDay();
-		String Name="";
+		int day = 0;
+		Calendar today = Calendar.getInstance();
+		day = today.get(Calendar.DAY_OF_MONTH);
+		String Name = "";
+		Name = getDayStr(day, Name);
+		return Name;
+	}
+
+	private String getDayStr(int day, String Name) 
+	{
 		if (day==0) Name="Sunday";
 		else if (day==1) Name="Monday";
 		else if (day==2) Name="Tuesday";
@@ -83,9 +94,18 @@ public class SmartTrafficInterval {
 	}
 	
 	public int getCurrentTimeInterval() {
-		int currentHour,interval=0;
-		Date today = Calendar.getInstance().getTime();
-		currentHour=today.getHours();
+		int currentHour = 0;
+		int interval = 0;
+		Calendar today = Calendar.getInstance();
+		currentHour = today.get(Calendar.HOUR_OF_DAY);
+		interval = calcInterval(currentHour, interval);
+		//System.out.println(currentHour);
+		return interval;
+	}
+
+	//Refactored by making a new method
+	private int calcInterval(int currentHour, int interval) 
+	{
 		if (currentHour>=0 && currentHour<=2) interval=1;
 		else if (currentHour>= 3 && currentHour<=5) interval=2;
 		else if (currentHour>= 6 && currentHour<=8) interval=3;
@@ -94,7 +114,6 @@ public class SmartTrafficInterval {
 		else if (currentHour>= 15 && currentHour<=17) interval=6;
 		else if (currentHour>= 18 && currentHour<=20) interval=7;
 		else if (currentHour>= 21 && currentHour<=23) interval=8;
-		//System.out.println(currentHour);
 		return interval;
 	}
 	
@@ -103,14 +122,7 @@ public class SmartTrafficInterval {
 		int currentHour,interval=0;
 		String Time = Hour.substring(0, 2);  
 		currentHour=Integer.parseInt(Time);
-		if (currentHour>=0 && currentHour<=2) interval=1;
-		else if (currentHour>= 3 && currentHour<=5) interval=2;
-		else if (currentHour>= 6 && currentHour<=8) interval=3;
-		else if (currentHour>= 9 && currentHour<=11) interval=4;
-		else if (currentHour>= 12 && currentHour<=14) interval=5;
-		else if (currentHour>= 15 && currentHour<=17) interval=6;
-		else if (currentHour>= 18 && currentHour<=20) interval=7;
-		else if (currentHour>= 21 && currentHour<=23) interval=8;
+		interval = calcInterval(currentHour, interval);
 		//System.out.println(currentHour);
 		return interval;
 	}

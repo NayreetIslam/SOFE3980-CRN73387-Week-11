@@ -45,7 +45,8 @@ public class TrafficLight {
 	//index of bulb that is lit
 	public int indexOfLitBulb() {
 		int i=0;
-		while(i < lights.length && lights[i].isOff()) {
+		while(i < lights.length && lights[i].isOff()) 
+		{
 			i++;
 		}
 		return i;
@@ -53,7 +54,8 @@ public class TrafficLight {
 	
 	public String toString() {
 		String result="";
-		for(int i=0;i<lights.length;i++) {
+		for(int i=0;i<lights.length;i++) 
+		{
 			result+="Bulb "+(i+1)+" is "+lights[i].getColorName()+" and "
 					+ lights[i].toString().toLowerCase()+"\n";
 		}
