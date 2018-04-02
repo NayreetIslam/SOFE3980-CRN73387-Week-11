@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dad5774e_eb8aad42",
+        "filename": "SmartTrafficLight/src/Bulb.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1013761
+      },
+      "writtenOn": "2018-04-02T15:01:57Z",
+      "side": 1,
+      "message": "Looks Good",
+      "revId": "76e916db1b88496da98a31637af5f7f72722d031",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
