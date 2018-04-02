@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "35573528_aa1622c9",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1013753
+      },
+      "writtenOn": "2018-04-02T14:32:45Z",
+      "side": 1,
+      "message": "good change",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 39
+      },
+      "revId": "52a8c0fc6b64dfb89d31aab25c7845cd1d22757a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7e2cf21_47ad2dcc",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1013753
+      },
+      "writtenOn": "2018-04-02T14:32:45Z",
+      "side": 1,
+      "message": "good removal of deprecated libs",
+      "revId": "52a8c0fc6b64dfb89d31aab25c7845cd1d22757a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
