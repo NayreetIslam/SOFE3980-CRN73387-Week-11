@@ -1,13 +1,12 @@
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TrafficLightPanel extends JPanel implements Runnable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//instance fields
 	private TrafficLight light;
 	private final int X=60, Y=50, WIDTH=50, HEIGHT=130;
@@ -85,30 +84,46 @@ public class TrafficLightPanel extends JPanel implements Runnable{
        
 		//System.out.println("Thread started");
 		lane1Time=(int) (lane1Time+lane1Time*smart.getSmartSignalTime());
+		
 		if(lane1Time>15000) lane1Time=15000;
+		
 		lane2Time=20000-lane1Time;
+		
 		if(lane2Time<5000) lane2Time=5000;
 		
-		if(smart.getTrafficCondition()==1) {trafficCondition="Medium";}
-		else if(smart.getTrafficCondition()==2) {trafficCondition="Light";}
-		else {trafficCondition="Heavy";}
+		switch(smart.getTrafficCondition()){
+			case 1:
+				trafficCondition="Medium";
+				break;
+			case 2:
+				trafficCondition="Light";
+				break;
+			default:
+				trafficCondition="Heavy";
+				break;
+		}
 		
-		
-		for(;;) {
+		//Replaced for(;;) with while(true)
+		while(true){
 			try {
-				if(light.indexOfLitBulb()==0) {
-					Thread.sleep(lane2Time);
-					signalName="GO";
-					//System.out.println(lane2Time);
-				}
-				else if(light.indexOfLitBulb()==1) {
-					Thread.sleep(1000);
-					signalName="STOP";
-				}	
-				else if(light.indexOfLitBulb()==2) {
-					Thread.sleep(lane1Time);
-					signalName="SLOW";
-					//System.out.println(lane1Time);
+				switch(light.indexOfLitBulb()){
+					case 0:
+						Thread.sleep(lane2Time);
+						signalName="GO";
+						break;
+						//System.out.println(lane2Time);
+					case 1:
+						Thread.sleep(1000);
+						signalName="STOP";
+						break;
+				
+					case 2:
+						Thread.sleep(lane1Time);
+						signalName="SLOW";
+						//System.out.println(lane1Time);
+						break;
+					default:
+						break;
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -117,12 +132,4 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 			repaint();	
 		}
     }
-	
-	private class ChangeListener implements ActionListener{
-		public void actionPerformed(ActionEvent arg0) {
-			light.nextState();
-			repaint();
-		}
-		
-	}
 }//end of class

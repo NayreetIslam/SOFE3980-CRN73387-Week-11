@@ -1,12 +1,8 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 
 public class SmartTrafficInterval {
 	
@@ -59,7 +55,8 @@ public class SmartTrafficInterval {
     		else {
     			predictrafficCondition=3;
     		}
-            
+            //closed the buffer
+            b.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,23 +66,47 @@ public class SmartTrafficInterval {
 	
 	public String getCurrentDay() {
 		int day;
-		Date today = Calendar.getInstance().getTime();
-		day=today.getDay();
+		//created calendar object to replace Date object with get the day of the week (sunday = 0...etc)
+		Calendar startDate = Calendar.getInstance();
+		day=startDate.get(Calendar.DAY_OF_WEEK);
 		String Name="";
-		if (day==0) Name="Sunday";
-		else if (day==1) Name="Monday";
-		else if (day==2) Name="Tuesday";
-		else if (day==3) Name="Wednesday";
-		else if (day==4) Name="Thursday";
-		else if (day==5) Name="Friday";
-		else if (day==6) Name="Saturday";
+		//Refactoring if statement to Switch statements
+		switch (day){
+		case 0:
+			Name = "Sunday";
+			break;
+		case 1:
+			Name = "Monday";
+			break;
+		case 2:
+			Name = "Tuesday";
+			break;
+		case 3:
+			Name = "Wednesday";
+			break;
+		case 4:
+			Name = "Thursday";
+			break;
+		case 5:
+			Name = "Friday";
+			break;
+		case 6:
+			Name = "Saturday";
+			break;
+		default:
+			Name = "Unknown";
+			break;
+		}
 		return Name;
 	}
 	
 	public int getCurrentTimeInterval() {
 		int currentHour,interval=0;
-		Date today = Calendar.getInstance().getTime();
-		currentHour=today.getHours();
+		//calendar object replacing Date object to use HOUR_OF_DAY
+		Calendar rightNow = Calendar.getInstance();
+		currentHour = rightNow.get(Calendar.HOUR_OF_DAY);
+		//Date today = Calendar.getInstance().getTime();
+		//currentHour=today.getHours();
 		if (currentHour>=0 && currentHour<=2) interval=1;
 		else if (currentHour>= 3 && currentHour<=5) interval=2;
 		else if (currentHour>= 6 && currentHour<=8) interval=3;
