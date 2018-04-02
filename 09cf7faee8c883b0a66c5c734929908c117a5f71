@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "810e02f3_41be1e7c",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013757
+      },
+      "writtenOn": "2018-04-02T14:55:30Z",
+      "side": 1,
+      "message": "Jeff\u0027s changes to the variable names made it clearer for other people to read the code and understand what the variable is holding since currentLine is clearer than currencies.",
+      "revId": "09cf7faee8c883b0a66c5c734929908c117a5f71",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "36c7bb44_53ed9638",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013757
+      },
+      "writtenOn": "2018-04-02T14:55:30Z",
+      "side": 1,
+      "message": "Changes are acceptable since the old code that was commented out was removed. New bulb objects were created and utilized to use their respective methods. Instead of using the uncommon infinite for loop, the while loop was used to prevent confusion. Helpful comments were added that added to the easier comprehension of the code.",
+      "revId": "09cf7faee8c883b0a66c5c734929908c117a5f71",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
