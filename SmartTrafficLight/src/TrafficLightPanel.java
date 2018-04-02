@@ -1,3 +1,4 @@
+package somePackage;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -20,16 +21,14 @@ public class TrafficLightPanel extends JPanel implements Runnable{
     int lane1Time;
     int lane2Time;
     String trafficCondition="";
-    
+    Bulb[] bulbs;
+	
+	
 	//constructors 
 	public TrafficLightPanel() {
+		//setup a blank page and initialize variable
 		light=new TrafficLight();
-		//JButton changeButton = new JButton("Change Light");
-		//changeButton.addActionListener(new ChangeListener());
-		//add(changeButton);
 		signalName="Stop";
-		//JLabel lable1= new JLabel(signalName);
-		//add(lable1);
 		lane1Time=10000;
 		lane2Time=10000;
 		setBackground(Color.WHITE);
@@ -37,20 +36,24 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		signalName= new String();
 		smart=new SmartTrafficInterval();
         signalFlag=1;
-        //f= new Font("Arial",Font.BOLD,50);
         traffic= new Thread(this);
         traffic.start();
+        bulbs = new Bulb[3];
+		bulbs = light.getLights();
 		
 	}
 	
 	//methods
 	public void paintComponent(Graphics page) {
 		super.paintComponent(page);
+		//default to dark_gray
 		page.setColor(Color.LIGHT_GRAY);
 		page.fillRect(X, Y, WIDTH, HEIGHT);
+		
+		
 		//draw the red light
 		if(light.indexOfLitBulb()==0) {
-			page.setColor(Color.RED);
+			page.setColor(bulbs[0].getColor());
 		}else {
 			page.setColor(Color.DARK_GRAY);
 		}
@@ -58,7 +61,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		
 		//draw the yellow light
 		if(light.indexOfLitBulb()==1) {
-			page.setColor(Color.YELLOW);
+			page.setColor(bulbs[1].getColor());
 		}else {
 			page.setColor(Color.DARK_GRAY);
 		}
@@ -66,12 +69,13 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		
 		//draw the green light
 		if(light.indexOfLitBulb()==2) {
-			page.setColor(Color.GREEN);
+			page.setColor(bulbs[2].getColor());
 		}else {
 			page.setColor(Color.DARK_GRAY);
 		}
 		page.fillOval(X+X_OFFSET, Y+2*DIAMETER+3*Y_OFFSET, DIAMETER, DIAMETER);
 		
+		//print text messages
 		page.setColor(Color.BLACK);
 		page.drawString(signalName,135, 118);
 		page.drawString("Lane1 Signal Time "+lane1Time,135, 138);
@@ -93,13 +97,13 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		else if(smart.getTrafficCondition()==2) {trafficCondition="Light";}
 		else {trafficCondition="Heavy";}
 		
-		
-		for(;;) {
+		//loop forever, redrawing things.
+		while(true) {
 			try {
 				if(light.indexOfLitBulb()==0) {
 					Thread.sleep(lane2Time);
 					signalName="GO";
-					//System.out.println(lane2Time);
+					
 				}
 				else if(light.indexOfLitBulb()==1) {
 					Thread.sleep(1000);
@@ -108,7 +112,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 				else if(light.indexOfLitBulb()==2) {
 					Thread.sleep(lane1Time);
 					signalName="SLOW";
-					//System.out.println(lane1Time);
+					
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();

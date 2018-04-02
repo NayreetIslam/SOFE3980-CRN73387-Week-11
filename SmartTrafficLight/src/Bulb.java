@@ -1,3 +1,4 @@
+package somePackage;
 import java.awt.Color;
 
 public class Bulb {

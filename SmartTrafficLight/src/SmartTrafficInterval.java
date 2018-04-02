@@ -1,3 +1,4 @@
+package somePackage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,22 +24,23 @@ public class SmartTrafficInterval {
 		int count=0,totalNumberOfSignals=0;
 		float vehicleNumber=0;
 		try {
+			//Grab input from input from text and parse it.
             File f = new File("input.txt");
             BufferedReader b = new BufferedReader(new FileReader(f));
             String readLine = "";
             while ((readLine = b.readLine()) != null) {
-            	String[] currencies = readLine.split("\\s+");   
+            	String[] currentLine = readLine.split("\\s+");   
             	
             	if(totalNumberOfSignals!=0) {
-            		vehicleNumber+=Float.parseFloat(currencies[3]);
-                	vehicleNumber+=Float.parseFloat(currencies[4]);
+            		vehicleNumber+=Float.parseFloat(currentLine[3]);
+                	vehicleNumber+=Float.parseFloat(currentLine[4]);
             	}
             	totalNumberOfSignals++;
             	
-            	if(currencies[1].equalsIgnoreCase(getCurrentDay())) {
-            		if( getCurrentTimeInterval(currencies[2]) == getCurrentTimeInterval()) {
-            			sumOfLane1+=lane1=Float.parseFloat(currencies[3]);
-            			sumOfLane2+=lane2=Float.parseFloat(currencies[4]);
+            	if(currentLine[1].equalsIgnoreCase(getCurrentDay())) {
+            		if( getCurrentTimeInterval(currentLine[2]) == getCurrentTimeInterval()) {
+            			sumOfLane1+=lane1=Float.parseFloat(currentLine[3]);
+            			sumOfLane2+=lane2=Float.parseFloat(currentLine[4]);
             				++count;
             				average+=((lane1/lane2)-1);
             				System.out.println(average+" "+sumOfLane1+" "+sumOfLane2);
