@@ -1,0 +1,192 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f852f0b1_3d0667ab",
+        "filename": "SmartTrafficLight/src/Bulb.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "Changing the types of braces makes this easier to read.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2bd76e26_b60d43ea",
+        "filename": "SmartTrafficLight/src/Runner.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "He removed unused packages. It is bad style to leave unused imports in code.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "340a67cf_8ad1267a",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "This change made the code more modular.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff5d7e9e_739f3508",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "This is refactored method.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66eafc11_012caae9",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "Another refactored method. Good.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc1c5dc2_aa6f7cb3",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "Another refactored method.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd03c063_6dfcf52a",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "An effective refactored method call.",
+      "range": {
+        "startLine": 124,
+        "startChar": 29,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87058ae0_1e68ada0",
+        "filename": "SmartTrafficLight/src/TrafficLight.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "The change to the braces makes the code easier to read.",
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdef671d_3b1a5e39",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "It is good to add the stuff Eclipse recommends.",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 49
+      },
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6012732_4caa8635",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1013750
+      },
+      "writtenOn": "2018-04-02T14:30:59Z",
+      "side": 1,
+      "message": "This change makes the code more modular.",
+      "range": {
+        "startLine": 85,
+        "startChar": 6,
+        "endLine": 86,
+        "endChar": 6
+      },
+      "revId": "1d71bbec8607a7b1e5405697f4b8d84c2926c326",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
