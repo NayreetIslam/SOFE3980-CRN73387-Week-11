@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f29a0cab_a8fc5a5c",
+        "filename": "SmartTrafficLight/src/Bulb.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "renamed variable for clarity so it is easy to understand code",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb957d45_acd1412d",
+        "filename": "SmartTrafficLight/src/Runner.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "removed unused packages because they are not needed and don\u0027t need to be imported.",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b274d0b4_612dab47",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "renamed variable for clarity but still not understandable",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54053024_a0b80cc4",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "the variable name needs to be more specific",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "563dfeb4_5ee7b8c0",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "editing variable name because it was change above",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28dfe52d_ed53e3a2",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "using above equation variables for shortening the time to retype the equation for calculations",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6d0e5441_c4aae2fa",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "added suppress warning for deprecated code so program does not yell when trying to run it",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3bb3c97d_1d85340a",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "added suppress warning for deprecated code so program does not yell when trying to run it",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "742ef85b_6d49ba62",
+        "filename": "SmartTrafficLight/src/TrafficLight.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "reformatted constructor contents",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5068775e_a793ff8e",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "modified serial number to remove warning",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1133ece4_79678fa1",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1013801
+      },
+      "writtenOn": "2018-04-02T14:33:38Z",
+      "side": 1,
+      "message": "removed action listener method because it was not being used",
+      "revId": "5cb83592fcb2746f78f0bf2d56968537e349800b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
