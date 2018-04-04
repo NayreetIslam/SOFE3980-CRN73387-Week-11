@@ -30,18 +30,16 @@ public class SmartTrafficInterval {
             	String[] currencies = readLine.split("\\s+");   
             	
             	if(totalNumberOfSignals!=0) {
-            		vehicleNumber+=Float.parseFloat(currencies[3]);
-                	vehicleNumber+=Float.parseFloat(currencies[4]);
+            		vehicleNumber+=Float.parseFloat(currencies[3])+Float.parseFloat(currencies[4]);
             	}
             	totalNumberOfSignals++;
-            	
             	if(currencies[1].equalsIgnoreCase(getCurrentDay())) {
             		if( getCurrentTimeInterval(currencies[2]) == getCurrentTimeInterval()) {
             			sumOfLane1+=lane1=Float.parseFloat(currencies[3]);
             			sumOfLane2+=lane2=Float.parseFloat(currencies[4]);
-            				++count;
-            				average+=((lane1/lane2)-1);
-            				System.out.println(average+" "+sumOfLane1+" "+sumOfLane2);
+            			++count;
+            			average+=((lane1/lane2)-1);
+            			System.out.println(average+" "+sumOfLane1+" "+sumOfLane2);
             		}
             	}	
             }
@@ -50,16 +48,7 @@ public class SmartTrafficInterval {
             currentTrafficAverage=(sumOfLane1+sumOfLane2)/count;
             totalTrafficAverage=vehicleNumber/totalNumberOfSignals;
             
-            if(Math.abs(currentTrafficAverage-totalTrafficAverage)<=4) {
-            	predictrafficCondition=1;
-    		}
-    		else if(totalTrafficAverage>=currentTrafficAverage) {
-    			predictrafficCondition=2;
-    		}
-    		else {
-    			predictrafficCondition=3;
-    		}
-            
+            predictrafficCondition = (Math.abs(currentTrafficAverage-totalTrafficAverage) ? (1) : (totalTrafficAverage>=currentTrafficAverage) ? (2) : (2))
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,28 +61,33 @@ public class SmartTrafficInterval {
 		Date today = Calendar.getInstance().getTime();
 		day=today.getDay();
 		String Name="";
-		if (day==0) Name="Sunday";
-		else if (day==1) Name="Monday";
-		else if (day==2) Name="Tuesday";
-		else if (day==3) Name="Wednesday";
-		else if (day==4) Name="Thursday";
-		else if (day==5) Name="Friday";
-		else if (day==6) Name="Saturday";
+		switch (day) {
+		case 0:  Name = "Sunday";break;
+        case 1:  Name = "Monday";break;
+        case 2:  Name = "Tuesday";break;
+        case 3:  Name = "Wednesday";break;
+        case 4:  Name = "Thursday";break;
+        case 5:  Name = "Friday";break;
+        case 6:  Name = "Saturday";break;
+        default: Name = "Invalid day";break;
+    }
 		return Name;
 	}
-	
+	public static boolean isBetween(int x, int lower, int upper) {
+		  return lower <= x && x <= upper;
+		}
 	public int getCurrentTimeInterval() {
 		int currentHour,interval=0;
 		Date today = Calendar.getInstance().getTime();
 		currentHour=today.getHours();
-		if (currentHour>=0 && currentHour<=2) interval=1;
-		else if (currentHour>= 3 && currentHour<=5) interval=2;
-		else if (currentHour>= 6 && currentHour<=8) interval=3;
-		else if (currentHour>= 9 && currentHour<=11) interval=4;
-		else if (currentHour>= 12 && currentHour<=14) interval=5;
-		else if (currentHour>= 15 && currentHour<=17) interval=6;
-		else if (currentHour>= 18 && currentHour<=20) interval=7;
-		else if (currentHour>= 21 && currentHour<=23) interval=8;
+		if (isBetween(currentHour, 0, 2)) interval=1;
+		else if (isBetween(currentHour, 3, 5)) interval=2;
+		else if (isBetween(currentHour, 6, 8)) interval=3;
+		else if (isBetween(currentHour, 9,11)) interval=4;
+		else if (isBetween(currentHour, 12, 14)) interval=5;
+		else if (isBetween(currentHour, 15, 17)) interval=6;
+		else if (isBetween(currentHour, 18, 20)) interval=7;
+		else if (isBetween(currentHour, 21, 23)) interval=8;
 		//System.out.println(currentHour);
 		return interval;
 	}
@@ -103,14 +97,14 @@ public class SmartTrafficInterval {
 		int currentHour,interval=0;
 		String Time = Hour.substring(0, 2);  
 		currentHour=Integer.parseInt(Time);
-		if (currentHour>=0 && currentHour<=2) interval=1;
-		else if (currentHour>= 3 && currentHour<=5) interval=2;
-		else if (currentHour>= 6 && currentHour<=8) interval=3;
-		else if (currentHour>= 9 && currentHour<=11) interval=4;
-		else if (currentHour>= 12 && currentHour<=14) interval=5;
-		else if (currentHour>= 15 && currentHour<=17) interval=6;
-		else if (currentHour>= 18 && currentHour<=20) interval=7;
-		else if (currentHour>= 21 && currentHour<=23) interval=8;
+		if (isBetween(currentHour, 0, 2)) interval=1;
+		else if (isBetween(currentHour, 3, 5)) interval=2;
+		else if (isBetween(currentHour, 6, 8)) interval=3;
+		else if (isBetween(currentHour, 9,11)) interval=4;
+		else if (isBetween(currentHour, 12, 14)) interval=5;
+		else if (isBetween(currentHour, 15, 17)) interval=6;
+		else if (isBetween(currentHour, 18, 20)) interval=7;
+		else if (isBetween(currentHour, 21, 23)) interval=8;
 		//System.out.println(currentHour);
 		return interval;
 	}

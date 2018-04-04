@@ -25,20 +25,13 @@ public class TrafficLight {
 	//algorithm for changing the traffic lights
 	
 	public void nextState() {
-		// red to green
-		if(lights[0].isOn()) {
-			lights[0].turnOff();
-			lights[2].turnOn();
-		}
-		// green to yellow
-		else if(lights[2].isOn()) {
-			lights[2].turnOff();
-			lights[1].turnOn();
-		}
-		//yellow to red
-		else if(lights[1].isOn()) {
-			lights[1].turnOff();
-			lights[0].turnOn();
+		for (int i =0;I<lights.length;i++) {
+			if(lights[i].isOn()) {
+				lights[i].turnOff();
+				lights[((i==0) ? (lights.length -1 =):i-1))].turnOn();
+				
+			}
+			
 		}
 	}
 	

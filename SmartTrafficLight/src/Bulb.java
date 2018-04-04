@@ -48,14 +48,8 @@ public class Bulb {
 	}
 	
 	public String toString() {
-		String result;
-		if(on) {
-			result="The "+getColorName()+" light is on.";
-		}
-		else {
-			result="The "+getColorName()+" light is off.";
-		}
-		return result;
+		return "The "+getColorName()+((on) ? " light is on.":" light is off.");
+		
 	}
 	
 	
