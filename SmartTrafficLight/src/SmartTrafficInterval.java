@@ -72,13 +72,15 @@ public class SmartTrafficInterval {
 		Date today = Calendar.getInstance().getTime();
 		day=today.getDay();
 		String Name="";
-		if (day==0) Name="Sunday";
-		else if (day==1) Name="Monday";
-		else if (day==2) Name="Tuesday";
-		else if (day==3) Name="Wednesday";
-		else if (day==4) Name="Thursday";
-		else if (day==5) Name="Friday";
-		else if (day==6) Name="Saturday";
+		switch (day) {
+		case 0: Name="Sunday";break; 
+		case 1: Name="Monday";break; 
+		case 2: Name="Tuseday";break; 
+		case 3: Name="Wednesday";break; 
+		case 4: Name="Thrusday";break;
+		case 5: Name="Firday";break; 
+		case 6: Name="Saturday";break; 
+		}
 		return Name;
 	}
 	

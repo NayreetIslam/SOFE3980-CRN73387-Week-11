@@ -33,7 +33,7 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		lane1Time=10000;
 		lane2Time=10000;
 		setBackground(Color.WHITE);
-		setPreferredSize(new Dimension(280,220));
+		setPreferredSize  (new Dimension(280,220));
 		signalName= new String();
 		smart=new SmartTrafficInterval();
         signalFlag=1;
@@ -49,27 +49,23 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		page.setColor(Color.LIGHT_GRAY);
 		page.fillRect(X, Y, WIDTH, HEIGHT);
 		//draw the red light
-		if(light.indexOfLitBulb()==0) {
-			page.setColor(Color.RED);
-		}else {
-			page.setColor(Color.DARK_GRAY);
+		switch(light.indexOfLitBulb()) {
+		case 0: 	
+				page.setColor(Color.RED);
+				break;
+		case 1: 
+				page.setColor(Color.YELLOW);
+				break;
+		case 2: 
+				page.setColor(Color.GREEN);
+				break;
+				
+		default:
+				page.setColor(Color.DARK_GRAY);
+				break; 
 		}
 		page.fillOval(X+X_OFFSET, Y+Y_OFFSET, DIAMETER, DIAMETER);
-		
-		//draw the yellow light
-		if(light.indexOfLitBulb()==1) {
-			page.setColor(Color.YELLOW);
-		}else {
-			page.setColor(Color.DARK_GRAY);
-		}
 		page.fillOval(X+X_OFFSET, Y+DIAMETER+2*Y_OFFSET, DIAMETER, DIAMETER);
-		
-		//draw the green light
-		if(light.indexOfLitBulb()==2) {
-			page.setColor(Color.GREEN);
-		}else {
-			page.setColor(Color.DARK_GRAY);
-		}
 		page.fillOval(X+X_OFFSET, Y+2*DIAMETER+3*Y_OFFSET, DIAMETER, DIAMETER);
 		
 		page.setColor(Color.BLACK);
@@ -96,21 +92,28 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 		
 		for(;;) {
 			try {
-				if(light.indexOfLitBulb()==0) {
+				switch(light.indexOfLitBulb()) {
+				case 0:
 					Thread.sleep(lane2Time);
 					signalName="GO";
+					break;
 					//System.out.println(lane2Time);
-				}
-				else if(light.indexOfLitBulb()==1) {
+				
+				case 1:
+					
 					Thread.sleep(1000);
 					signalName="STOP";
-				}	
-				else if(light.indexOfLitBulb()==2) {
+					break;
+					
+				case 2:
+					
 					Thread.sleep(lane1Time);
 					signalName="SLOW";
+					break;
 					//System.out.println(lane1Time);
 				}
-			} catch (InterruptedException e) {
+				}
+			catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			light.nextState();
