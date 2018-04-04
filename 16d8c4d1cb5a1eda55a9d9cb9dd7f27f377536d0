@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "924fa1d8_21933b7f",
+        "filename": "SmartTrafficLight/src/TrafficLightPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1013806
+      },
+      "writtenOn": "2018-04-04T14:15:51Z",
+      "side": 1,
+      "message": "wicked good",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "16d8c4d1cb5a1eda55a9d9cb9dd7f27f377536d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
