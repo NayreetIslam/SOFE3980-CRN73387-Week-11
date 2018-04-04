@@ -84,10 +84,14 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 	public void run() {
        
 		//System.out.println("Thread started");
-		lane1Time=(int) (lane1Time+lane1Time*smart.getSmartSignalTime());
-		if(lane1Time>15000) lane1Time=15000;
+		lane1Time=(int) (lane1Time + lane1Time * smart.getSmartSignalTime());
+		if(lane1Time > 15000){
+			lane1Time=15000;
+		}
 		lane2Time=20000-lane1Time;
-		if(lane2Time<5000) lane2Time=5000;
+		if(lane2Time < 5000) {
+			lane2Time=5000;
+		}
 		
 		if(smart.getTrafficCondition()==1) {trafficCondition="Medium";}
 		else if(smart.getTrafficCondition()==2) {trafficCondition="Light";}
