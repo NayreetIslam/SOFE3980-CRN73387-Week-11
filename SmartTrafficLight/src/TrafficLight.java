@@ -53,9 +53,9 @@ public class TrafficLight {
 	
 	public String toString() {
 		String result="";
-		for(int i=0;i<lights.length;i++) {
-			result+="Bulb "+(i+1)+" is "+lights[i].getColorName()+" and "
-					+ lights[i].toString().toLowerCase()+"\n";
+		for(int i=0; i < lights.length; i++) {
+			result += "Bulb "+ (i + 1) + " is " + lights[i].getColorName() + " and "
+					  + lights[i].toString().toLowerCase()+"\n";
 		}
 		return result;
 	}
