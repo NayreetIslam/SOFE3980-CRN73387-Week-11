@@ -30,16 +30,18 @@ public class TrafficLight {
 			lights[0].turnOff();
 			lights[2].turnOn();
 		}
-		// green to yellow
-		else if(lights[2].isOn()) {
-			lights[2].turnOff();
-			lights[1].turnOn();
-		}
+		
 		//yellow to red
 		else if(lights[1].isOn()) {
 			lights[1].turnOff();
 			lights[0].turnOn();
 		}
+		// green to yellow
+		else if(lights[2].isOn()) {
+			lights[2].turnOff();
+			lights[1].turnOn();
+		}
+	
 	}
 	
 	//index of bulb that is lit

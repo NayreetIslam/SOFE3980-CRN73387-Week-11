@@ -10,16 +10,12 @@ public class TrafficLightPanel extends JPanel implements Runnable{
 
 	//instance fields
 	private TrafficLight light;
-	private final int X=60, Y=50, WIDTH=50, HEIGHT=130;
-	private final int DIAMETER=30;
-	private final int X_OFFSET=10,Y_OFFSET=10;
+	private final int X=60, Y=50, WIDTH=50, HEIGHT=130, DIAMETER =30, X_OFFSET =10, Y_OFFSET =10;
 	Thread traffic;
-    int signalFlag;
+    int signalFlag, lane1Time, lane2Time;
     String signalName="";
     SmartTrafficInterval smart;
-    int lane1Time;
-    int lane2Time;
-    String trafficCondition="";
+    String trafficCondition= "";
     
 	//constructors 
 	public TrafficLightPanel() {

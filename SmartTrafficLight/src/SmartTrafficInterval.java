@@ -10,18 +10,17 @@ import java.util.Date;
 
 public class SmartTrafficInterval {
 	
-	
-	public int predictrafficCondition=1;
+	// Used Camel Case to initizalize variable 
+	public int predictTrafficCondition=1;
 	
 	public float getSmartSignalTime() {
 		
 		
 		float currentTrafficAverage,totalTrafficAverage;
 		
-		float lane1=0,lane2=0,sumOfLane1=0,sumOfLane2=0;
-		float average=0;
+		// Combined variables 
+		float lane1=0,lane2=0,sumOfLane1=0,sumOfLane2=0, vehicleNumber = 0, average = 0;
 		int count=0,totalNumberOfSignals=0;
-		float vehicleNumber=0;
 		try {
             File f = new File("input.txt");
             BufferedReader b = new BufferedReader(new FileReader(f));
@@ -51,20 +50,20 @@ public class SmartTrafficInterval {
             totalTrafficAverage=vehicleNumber/totalNumberOfSignals;
             
             if(Math.abs(currentTrafficAverage-totalTrafficAverage)<=4) {
-            	predictrafficCondition=1;
+            	predictTrafficCondition=1;
     		}
     		else if(totalTrafficAverage>=currentTrafficAverage) {
-    			predictrafficCondition=2;
+    			predictTrafficCondition=2;
     		}
     		else {
-    			predictrafficCondition=3;
+    			predictTrafficCondition=3;
     		}
             
         } catch (IOException e) {
             e.printStackTrace();
         }
 		
-		return average/count;
+		return (float)(average/(float)(count));
 	}
 	
 	public String getCurrentDay() {
@@ -117,10 +116,11 @@ public class SmartTrafficInterval {
 	
 	public int getTrafficCondition() {
 		
-		return predictrafficCondition;
+		return predictTrafficCondition;
 		
 	}
 	
 	
 
 }
+
