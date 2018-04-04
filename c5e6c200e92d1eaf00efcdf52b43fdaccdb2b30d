@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee92295d_557f82ab",
+        "filename": "SmartTrafficLight/bin/.gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013813
+      },
+      "writtenOn": "2018-04-04T14:48:29Z",
+      "side": 1,
+      "message": "Made unnecessary?",
+      "revId": "c5e6c200e92d1eaf00efcdf52b43fdaccdb2b30d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b09b9c9f_f836aafd",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1013813
+      },
+      "writtenOn": "2018-04-04T14:48:29Z",
+      "side": 1,
+      "message": "This looks more efficient in terms of organization of code",
+      "revId": "c5e6c200e92d1eaf00efcdf52b43fdaccdb2b30d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64818744_eac61c06",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1013813
+      },
+      "writtenOn": "2018-04-04T14:48:29Z",
+      "side": 1,
+      "message": "Wednesday",
+      "revId": "c5e6c200e92d1eaf00efcdf52b43fdaccdb2b30d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3056443c_42222d41",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1013813
+      },
+      "writtenOn": "2018-04-04T14:48:29Z",
+      "side": 1,
+      "message": "Might be best to select a default day",
+      "revId": "c5e6c200e92d1eaf00efcdf52b43fdaccdb2b30d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
