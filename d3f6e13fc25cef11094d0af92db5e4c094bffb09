@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "462f0d63_e607cb3f",
+        "filename": "SmartTrafficLight/src/SmartTrafficInterval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1013803
+      },
+      "writtenOn": "2018-04-04T15:36:38Z",
+      "side": 1,
+      "message": "looks great",
+      "revId": "d3f6e13fc25cef11094d0af92db5e4c094bffb09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
